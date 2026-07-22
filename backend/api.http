@@ -1,0 +1,69 @@
+POST http://localhost:8080/register
+Content-Type: application/json
+
+{
+  "username": "rahul",
+  "password": "a",
+  "email": "rahul@gmail.com",
+  "name": "Rajul kumar"
+
+
+  
+}
+
+
+###
+
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "email": "rahul@gmail.com",
+  "password": "a"
+}
+
+
+###
+
+GET http://localhost:8080/get_user_and_profile
+Content-Type: application/json
+
+{
+  "token" : "f7430e815b96f0e47adbb7b60108608a34236a3518e34b38f0121d49b7a250cb"
+}
+
+###
+
+POST http://localhost:8080/update_profile_data
+Content-Type: application/json
+
+{
+  "token" : "3580450714d85baa0213d31b425f2c1b0c73638d017dbb397040c203b5e5d12e",
+  "bio" : "Hey, I am Anam, I am from Delhi, and currently looking for Job opportunities",
+  "currentPost": "SDE-II",
+  "pastWork": [
+    {
+      "company": "Google",
+      "position": "CTO",
+      "years": "2+"
+    }
+  ],
+  "education": [
+    {
+      "school": "IIIT",
+      "degree:": "B.Tech",
+      "fieldOfStudy": "2015-2019"
+    }
+  ]
+  
+
+}
+
+###
+
+GET http://localhost:8080/user/get_all_users
+Content-Type: application/json
+
+{
+
+}
