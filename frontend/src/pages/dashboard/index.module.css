@@ -19,9 +19,11 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  max-width: 80%;
+  width: 80%;
+  margin: 0 auto;
   gap: 1.3rem;
 }
+
 .uploadButton {
   position: absolute;
   right: 12px;
