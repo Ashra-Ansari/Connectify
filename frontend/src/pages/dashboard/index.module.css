@@ -101,6 +101,10 @@
   border-radius: 20px;
 }
 
+.singleCard_content {
+  flex: 1;
+  min-width: 0;
+}
 .optionsContainer {
   display: flex;
   height: 20%;

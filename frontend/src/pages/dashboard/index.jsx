@@ -105,7 +105,7 @@ export default function Dashboard() {
                         src={`${BASE_URL}/${post.userId.profilePicture}`}
                         alt=""
                       />
-                      <div>
+                      <div className={styles.singleCard_content}>
                         <div
                           style={{
                             display: "flex",
