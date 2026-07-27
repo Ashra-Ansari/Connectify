@@ -43,7 +43,7 @@
   border-radius: 20px;
 }
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
   .mainContainer {
     flex-direction: column;
     gap: 2rem;
@@ -61,4 +61,4 @@
   .mainContainer_right img {
     width: 100%;
   }
-}
+} */
