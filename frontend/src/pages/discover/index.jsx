@@ -24,6 +24,7 @@ export default function Discoverpage() {
         <DashboardLayout>
           <div>
             <h1>Discover with connectify </h1>
+            <br />
 
             <div className={styles.allUserProfile}>
               {authState.all_profiles_fetched &&
@@ -42,7 +43,7 @@ export default function Discoverpage() {
                         alt="Profile"
                       />
                       <div>
-                        <h1>{user.userId.name}</h1>
+                        <h2>{user.userId.name}</h2>
                         <p>{user.userId.username}</p>
                       </div>
                     </div>
