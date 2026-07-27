@@ -190,4 +190,11 @@
     width: 100%;
     align-items: center;
   }
+
+  .wrapper {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
 }
