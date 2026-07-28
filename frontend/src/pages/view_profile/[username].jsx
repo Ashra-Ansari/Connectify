@@ -171,29 +171,35 @@ export default function ViewProfilePage({ userProfile }) {
                   <p>{userProfile.bio}</p>
                 </div>
               </div>
-
               <div style={{ flex: "0.2" }}>
                 <h3>Recent Activity</h3>
-                {userPosts.map((post) => {
-                  return (
-                    <div key={post._id} className={styles.postCard}>
-                      <div className={styles.card}>
-                        <div className={styles.card_profileContainer}>
-                          {post.media?.url ? (
-                            <img src={post.media.url} alt="" />
-                          ) : (
-                            <div
-                              style={{ width: "3.4rem", height: "3.4rem" }}
-                            ></div>
-                          )}
-                        </div>
 
-                        <p>{post.body}</p>
+                {userPosts.length > 0 ? (
+                  <div className={styles.postCard}>
+                    <div className={styles.card}>
+                      <div className={styles.card_profileContainer}>
+                        {userPosts[0].media?.url ? (
+                          <img src={userPosts[0].media.url} alt="" />
+                        ) : (
+                          <div
+                            style={{ width: "3.4rem", height: "3.4rem" }}
+                          ></div>
+                        )}
                       </div>
+
+                      <p>
+                        {userPosts[0].body.length > 100
+                          ? `${userPosts[0].body.slice(0, 100)}...`
+                          : userPosts[0].body}
+                      </p>
                     </div>
-                  );
-                })}
-              </div>
+                  </div>
+                ) : (
+                  <p style={{ color: "grey", marginTop: "10px" }}>
+                    No recent activity.
+                  </p>
+                )}
+              </div>{" "}
             </div>
           </div>
 
