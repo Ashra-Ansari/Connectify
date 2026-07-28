@@ -32,6 +32,10 @@
   padding-top: 4em;
 }
 
+.profileContent {
+  display: flex;
+  gap: 0.7rem;
+}
 .card {
   display: flex;
   align-items: center;
@@ -182,4 +186,10 @@
   border-radius: 10px;
   border: 1px solid silver;
   width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .profileContent {
+    flex-direction: column;
+  }
 }

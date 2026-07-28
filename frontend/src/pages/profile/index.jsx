@@ -145,7 +145,7 @@ export default function ProfilePage() {
             </div>
 
             <div className={styles.profileContainer_details}>
-              <div style={{ display: "flex", gap: "0.7rem" }}>
+              <div className={styles.profileContent}>
                 <div style={{ flex: " 0.8" }}>
                   <div
                     style={{
@@ -184,7 +184,6 @@ export default function ProfilePage() {
                     ></textarea>
                   </div>
                 </div>
-
                 <div style={{ flex: "0.2" }}>
                   <h3>Recent Activity</h3>
                   {userPosts.map((post) => {
