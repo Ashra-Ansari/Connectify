@@ -190,8 +190,27 @@
 @media only screen and (max-width: 600px) {
   .allCommentsContainer {
     width: 90%;
+    padding: 1rem;
+    box-sizing: border-box;
   }
 
+  .postCommentContainer {
+    left: 1rem;
+    right: 1rem;
+    width: auto;
+    gap: 0.6rem;
+  }
+
+  .postCommentContainer > input {
+    flex: 1;
+    min-width: 0;
+    padding: 0.9rem;
+  }
+
+  .commentButton {
+    flex: none;
+    padding: 0.9rem 1rem;
+  }
   .scrollComponent {
     width: 100%;
     align-items: center;
