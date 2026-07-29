@@ -15,7 +15,7 @@ import {
   getUserProfileAndUserBasedOnUsername,
   uploadBannerPicture,
 } from "../controllers/user.controller.js";
-
+import { cloudinary, profileStorage } from "../cloudConfig.js";
 import multer from "multer";
 import profile from "../models/profile.model.js";
 const router = Router();
@@ -29,14 +29,14 @@ const storage = multer.diskStorage({
   },
 });
 
-const upload = multer({ storage: storage });
+const uploadProfile = multer({ storage: profileStorage });
 
 router
   .route("/update_profile_picture")
-  .post(upload.single("profile_picture"), uploadProfilePicture);
+  .post(uploadProfile.single("profile_picture"), uploadProfilePicture);
 router
   .route("/update_banner_picture")
-  .post(upload.single("banner_picture"), uploadBannerPicture);
+  .post(uploadProfile.single("banner_picture"), uploadBannerPicture);
 
 router.route("/register").post(register);
 router.route("/login").post(login);

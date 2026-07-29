@@ -9,11 +9,11 @@ import {
   increment_likes,
 } from "../controllers/post.controller.js";
 import multer from "multer";
-import { cloudinary, storage } from "../cloudConfig.js";
+import { cloudinary, postStorage } from "../cloudConfig.js";
 import { commentPost } from "../controllers/user.controller.js";
 
 const router = Router();
-const upload = multer({ storage });
+const uploadPost = multer({ storage: postStorage });
 
 // const storage = multer.diskStorage({
 //   destination: (req, file, cb) => {
@@ -24,7 +24,7 @@ const upload = multer({ storage });
 //   },
 // });
 
-router.route("/post").post(upload.single("media"), createPost);
+router.route("/post").post(uploadPost.single("media"), createPost);
 router.route("/posts").get(getAllPosts);
 router.route("/delete_post").delete(deletePost);
 router.route("/comment").post(commentPost);

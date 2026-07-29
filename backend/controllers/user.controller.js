@@ -96,7 +96,10 @@ export const uploadProfilePicture = async (req, res) => {
       return res.status(404).json({ message: "User not found " });
     }
 
-    user.profilePicture = req.file.filename;
+    user.profilePicture = {
+      url: req.file.path,
+      public_id: req.file.filename,
+    };
     await user.save();
     return res.json({ message: "Profile Picture Updated" });
   } catch (error) {
@@ -111,7 +114,10 @@ export const uploadBannerPicture = async (req, res) => {
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
-    user.bannerPicture = req.file.filename;
+    user.bannerPicture = {
+      url: req.file.path,
+      public_id: req.file.filename,
+    };
     await user.save();
     return res.json({ message: "Banner Picture Updated" });
   } catch (error) {
@@ -182,7 +188,7 @@ export const getAllUserProfile = async (req, res) => {
   try {
     const profiles = await Profile.find().populate(
       "userId",
-      "name username email profilePicture",
+      "name username email profilePicture bannerPicture",
     );
     return res.json({ profiles });
   } catch (error) {
@@ -331,7 +337,7 @@ export const getUserProfileAndUserBasedOnUsername = async (req, res) => {
     }
     const userProfile = await Profile.findOne({ userId: user._id }).populate(
       "userId",
-      "name username email profilePicture",
+      "name username email profilePicture bannerPicture",
     );
 
     return res.json({ profile: userProfile });

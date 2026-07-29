@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
-dotenv.config();
-
+dotenv.config({
+  path: "../.env",
+});
 import { v2 as cloudinary } from "cloudinary";
 import { CloudinaryStorage } from "multer-storage-cloudinary";
 
@@ -10,7 +11,7 @@ cloudinary.config({
   api_secret: process.env.CLOUD_API_SECRET,
 });
 
-const storage = new CloudinaryStorage({
+const postStorage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
     folder: "connectify_usersPost",
@@ -18,6 +19,12 @@ const storage = new CloudinaryStorage({
   },
 });
 
-// console.log("Current working directory:", process.cwd());
+const profileStorage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: "connectify_profiles",
+    allowedFormats: ["png", "jpg", "jpeg"],
+  },
+});
 
-export { cloudinary, storage };
+export { cloudinary, postStorage, profileStorage };

@@ -24,12 +24,25 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   profilePicture: {
-    type: String,
-    default: "default.jpg",
+    url: {
+      type: String,
+      default: "",
+    },
+    public_id: {
+      type: String,
+      default: "",
+    },
   },
+
   bannerPicture: {
-    type: String,
-    default: "default-banner.jpg",
+    url: {
+      type: String,
+      default: "",
+    },
+    public_id: {
+      type: String,
+      default: "",
+    },
   },
   createdAt: {
     type: Date,
