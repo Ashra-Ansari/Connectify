@@ -83,7 +83,7 @@
   align-items: flex-start;
   gap: 1.2rem;
   padding: 1.2rem;
-  padding-right: 3.4rem;
+  padding-right: 3.5rem;
 }
 
 .singleCard_profileContainer > img {
@@ -97,17 +97,18 @@
 .singleCard_image {
   width: 100%;
   padding-top: 0.6rem;
-  height: fit-content;
+  height: 400px;
   overflow: hidden;
-}
-
-.singleCard_image > img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
   border-radius: 20px;
 }
-
+.singleCard_image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  display: block;
+}
 .singleCard_content {
   flex: 1;
   min-width: 0;
@@ -219,6 +220,10 @@
   .scrollComponent {
     width: 100%;
     align-items: center;
+  }
+
+  .singleCard_image {
+    height: 240px;
   }
 
   .wrapper {

@@ -160,14 +160,11 @@ export default function Dashboard() {
                         <p style={{ color: "grey" }}>@{post.userId.username}</p>
                         <p style={{ paddingTop: "1.3rem" }}>{post.body}</p>
 
-                        <div className={styles.singleCard_image}>
-                          {post.media !== "" ? (
-                            <img src={post.media.url} />
-                          ) : (
-                            <></>
-                          )}
-                        </div>
-
+                        {post.media?.url && (
+                          <div className={styles.singleCard_image}>
+                            <img src={post.media.url} alt="" />
+                          </div>
+                        )}
                         <div className={styles.optionsContainer}>
                           <div
                             onClick={async () => {
