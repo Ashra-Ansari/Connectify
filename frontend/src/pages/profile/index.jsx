@@ -101,7 +101,11 @@ export default function ProfilePage() {
             <div
               className={styles.backDropContainer}
               style={{
-                backgroundImage: `url(${BASE_URL}/${userProfile.userId.bannerPicture || "default-banner.jpg"})`,
+                backgroundImage: `url(${
+                  userProfile.userId.bannerPicture?.url
+                    ? userProfile.userId.bannerPicture.url
+                    : `${BASE_URL}/default-banner.jpg`
+                })`,
               }}
             >
               {/* Banner Upload */}
@@ -139,7 +143,11 @@ export default function ProfilePage() {
                 id="profilePictureUpload"
               />
               <img
-                src={`${BASE_URL}/${userProfile.userId.profilePicture}`}
+                src={
+                  userProfile.userId.profilePicture?.url
+                    ? userProfile.userId.profilePicture.url
+                    : `${BASE_URL}/default.jpg`
+                }
                 alt="backdrop"
               />
             </div>

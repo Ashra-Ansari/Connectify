@@ -59,10 +59,14 @@ export default function MyConnectionsPage() {
                       >
                         <div className={styles.profilePicture}>
                           <img
-                            src={`${BASE_URL}/${user.userId.profilePicture}`}
+                            src={
+                              user.userId.profilePicture?.url
+                                ? user.userId.profilePicture.url
+                                : `${BASE_URL}/default.jpg`
+                            }
+                            alt="Profile"
                           />
                         </div>
-
                         <div className={styles.userInfo}>
                           <h3>{user.userId.name}</h3>
                           <p>{user.userId.username}</p>
@@ -108,11 +112,14 @@ export default function MyConnectionsPage() {
                   >
                     <div className={styles.profilePicture}>
                       <img
-                        src={`${BASE_URL}/${user.userId.profilePicture}`}
-                        alt=""
+                        src={
+                          user.userId.profilePicture?.url
+                            ? user.userId.profilePicture.url
+                            : `${BASE_URL}/default.jpg`
+                        }
+                        alt="Profile"
                       />
                     </div>
-
                     <div className={styles.userInfo}>
                       <h3>{user.userId.name}</h3>
                       <p>{user.userId.username}</p>

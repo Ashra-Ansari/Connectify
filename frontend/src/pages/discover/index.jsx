@@ -39,7 +39,11 @@ export default function Discoverpage() {
                     >
                       <img
                         className={styles.userCard_image}
-                        src={`${BASE_URL}/${user.userId.profilePicture}`}
+                        src={
+                          user.userId.profilePicture?.url
+                            ? user.userId.profilePicture.url
+                            : `${BASE_URL}/default.jpg`
+                        }
                         alt="Profile"
                       />
                       <div>

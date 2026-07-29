@@ -51,7 +51,11 @@ export default function Dashboard() {
               <div className={styles.createPostContainer}>
                 <img
                   className={styles.userProfile}
-                  src={`${BASE_URL}/${authState.user?.userId?.profilePicture}`}
+                  src={
+                    authState.user?.userId?.profilePicture?.url
+                      ? authState.user.userId.profilePicture.url
+                      : `${BASE_URL}/default.jpg`
+                  }
                   alt=""
                 />
                 <textarea
@@ -102,7 +106,11 @@ export default function Dashboard() {
                     <div className={styles.singleCard_profileContainer}>
                       <img
                         className={styles.userProfile}
-                        src={`${BASE_URL}/${post.userId.profilePicture}`}
+                        src={
+                          post.userId.profilePicture?.url
+                            ? post.userId.profilePicture.url
+                            : `${BASE_URL}/default.jpg`
+                        }
                         alt=""
                       />
                       <div className={styles.singleCard_content}>

@@ -84,19 +84,30 @@ export default function ViewProfilePage({ userProfile }) {
   useEffect(() => {
     getUserPost();
   }, []);
-
+  console.log(userProfile.userId);
   return (
     <UserLayout>
       <DashboardLayout>
         <div className={styles.container}>
-          <div className={styles.backDropContainer}>
+          <div
+            className={styles.backDropContainer}
+            style={{
+              backgroundImage: `url(${
+                userProfile.userId.bannerPicture?.url
+                  ? userProfile.userId.bannerPicture.url
+                  : `${BASE_URL}/default-banner.jpg`
+              })`,
+            }}
+          >
             <img
-              className={styles.backDrop}
-              src={`${BASE_URL}/${userProfile.userId.profilePicture}`}
-              alt="backdrop"
+              src={
+                userProfile.userId.profilePicture?.url
+                  ? userProfile.userId.profilePicture.url
+                  : `${BASE_URL}/default.jpg`
+              }
+              alt="Profile"
             />
           </div>
-
           <div className={styles.profileContainer_details}>
             <div className={styles.profileContainer_flex}>
               <div style={{ flex: " 0.8" }}>

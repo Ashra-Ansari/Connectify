@@ -16,6 +16,9 @@
 }
 
 .userCard_image {
-  width: 10%;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
 }

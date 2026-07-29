@@ -46,7 +46,7 @@ function LoginComponent() {
     console.log("login user");
     dispatch(loginUser({ email, password }));
   };
-
+  console.log(authState);
   return (
     <UserLayout>
       <div className={styles.container}>
@@ -57,7 +57,7 @@ function LoginComponent() {
             </p>
 
             <p style={{ color: authState.isError ? "red" : "green" }}>
-              {authState.message.message}
+              {authState.message}
             </p>
 
             <div className={styles.inputContainer}>
