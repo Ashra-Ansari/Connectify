@@ -19,12 +19,13 @@ export default function ViewProfilePage({ userProfile }) {
 
   const dispatch = useDispatch();
   const authState = useSelector((state) => state.auth);
+
   const [userPosts, setUserPosts] = useState([]);
 
   const [isCurrentUserInConnection, setIsCurrentUserInConnection] =
     useState(false);
 
-  const [isConnectionNull, setIsConnectionNull] = useState(true);
+  const [isConnectionAccepted, setIsConnectionAccepted] = useState(true);
 
   const getUserPost = async () => {
     await dispatch(getAllPosts());
@@ -60,7 +61,7 @@ export default function ViewProfilePage({ userProfile }) {
           (user) => user.connectionId._id === userProfile.userId._id,
         ).status_accepted === true
       ) {
-        setIsConnectionNull(false);
+        setIsConnectionAccepted(false);
       }
     }
 
@@ -76,7 +77,7 @@ export default function ViewProfilePage({ userProfile }) {
           (user) => user.userId._id === userProfile.userId._id,
         ).status_accepted === true
       ) {
-        setIsConnectionNull(false);
+        setIsConnectionAccepted(false);
       }
     }
   }, [authState.connections]);
@@ -84,7 +85,7 @@ export default function ViewProfilePage({ userProfile }) {
   useEffect(() => {
     getUserPost();
   }, []);
-  console.log(userProfile.userId);
+
   return (
     <UserLayout>
       <DashboardLayout>
@@ -131,7 +132,7 @@ export default function ViewProfilePage({ userProfile }) {
                 >
                   {isCurrentUserInConnection ? (
                     <button className={styles.connectedButton}>
-                      {isConnectionNull ? "Pending" : "Connected"}
+                      {isConnectionAccepted ? "Pending" : "Connected"}
                     </button>
                   ) : (
                     <button
