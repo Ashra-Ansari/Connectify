@@ -183,6 +183,7 @@ export default function ViewProfilePage({ userProfile }) {
               </div>
               <div style={{ flex: "0.2" }}>
                 <h3>Recent Activity</h3>
+                <br />
 
                 {userPosts.length > 0 ? (
                   <div className={styles.postCard}>
@@ -198,8 +199,8 @@ export default function ViewProfilePage({ userProfile }) {
                       </div>
 
                       <p>
-                        {userPosts[0].body.length > 100
-                          ? `${userPosts[0].body.slice(0, 100)}...`
+                        {userPosts[0].body.length > 20
+                          ? `${userPosts[0].body.slice(0, 20)}...`
                           : userPosts[0].body}
                       </p>
                     </div>
