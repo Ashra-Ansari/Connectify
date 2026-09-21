@@ -135,20 +135,98 @@ Responsive layouts and CSS media queries are used to adapt the application's UI 
 
 ---
 
-## 🎯 Learning Outcomes
+## ⚙️ Local Setup
 
-Through this project, I gained practical experience with:
+Follow the steps below to run Connectify locally.
 
-* Building a full-stack application using Next.js
-* Developing REST APIs using Node.js and Express.js
-* Working with MongoDB and Mongoose
-* Implementing authentication and protected routes
-* Managing application state using Redux Toolkit
-* Handling image uploads using Multer and Cloudinary
-* Designing reusable React components
-* Connecting frontend applications with backend APIs
-* Deploying frontend and backend applications
-* Working with Git and GitHub
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Ashra-Ansari/Connectify.git
+cd Connectify
+```
+
+### 2. Setup Backend
+
+Navigate to the backend folder:
+
+```bash
+cd backend
+```
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env` file inside the `backend` folder and add the required environment variables:
+
+```env
+MONGO_URL=your_mongodb_connection_string
+
+CLOUD_NAME=your_cloudinary_cloud_name
+CLOUD_API_KEY=your_cloudinary_api_key
+CLOUD_API_SECRET=your_cloudinary_api_secret
+```
+
+Then start the backend server:
+
+```bash
+npm run dev
+```
+
+The backend will start using `nodemon server.js`.
+
+### 3. Setup Frontend
+
+Open a **new terminal** and navigate to the frontend folder:
+
+```bash
+cd frontend
+```
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+Start the Next.js development server:
+
+```bash
+npm run dev
+```
+
+The frontend will be available at the local URL provided by Next.js.
+
+### 4. Database & Cloudinary Setup
+
+Connectify uses **MongoDB Atlas** for database storage and **Cloudinary** for media uploads.
+
+Before running the application, make sure you have:
+
+* A MongoDB Atlas cluster and connection string
+* A Cloudinary account with the required API credentials
+* The corresponding values added to the backend `.env` file
+
+> ⚠️ Never commit the `.env` file or expose your MongoDB and Cloudinary credentials publicly.
+>
+---
+ ## 👩‍💻 Author
+
+**Ashra Ansari**
+
+Recent Information Technology graduate focused on Full-Stack Web Development and building practical real-world applications.
+
+### Connect with me
+
+* GitHub: https://github.com/Ashra-Ansari
+* LinkedIn: https://www.linkedin.com/in/ashra-ansari-1749312a1/
 
 ---
+
+## ⭐ If you found this project useful
+
+Feel free to explore the repository, try the live application, or connect with me to discuss the project.
 
